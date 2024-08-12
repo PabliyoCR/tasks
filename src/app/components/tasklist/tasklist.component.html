@@ -1,0 +1,11 @@
+
+    <div class="lista">
+        @for (task of tasks; track $index) {
+            <div>
+                <input type="checkbox" [(ngModel)]="task.done" (change)="updateRemoteData()">
+                {{task.description}}
+            </div>
+        }
+        <input type="text" [(ngModel)]="newTaskDescription">
+        <button (click)="addTask()">Add Task</button>
+    </div>
